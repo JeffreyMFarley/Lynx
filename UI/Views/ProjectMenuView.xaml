@@ -1,0 +1,12 @@
+﻿<Menu x:Class="Lynx.UI.Views.ProjectMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <MenuItem Header="New Domain" Command="{Binding NewDomain}" InputGestureText="Ctrl+N" />
+    <MenuItem Header="Open Domain..." Command="{Binding OpenDomain}" InputGestureText="Ctrl+O" />
+    <MenuItem Header="Save Domain..." Command="{Binding SaveDomain}"  InputGestureText="Ctrl+S" />
+    <Separator />
+    <MenuItem Header="New Entity..." Command="{Binding NewEntitySet}" />    
+    <MenuItem Header="New Link..." Command="{Binding NewLinkSet}" />
+    <Separator />
+    <MenuItem Header="Generate Subset..." Command="{Binding GenerateSubset}" />
+</Menu>

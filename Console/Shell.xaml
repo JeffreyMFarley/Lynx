@@ -1,0 +1,17 @@
+﻿<Window x:Class="Lynx.Console.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cal="http://www.codeplex.com/CompositeWPF"
+        Title="Lynx" Height="480" Width="640">
+    <DockPanel Background="#FFD4D0C8">
+        <DockPanel DockPanel.Dock="Top" VerticalAlignment="Top">
+            <Menu>
+                <MenuItem Header="_Project" Name="MenuProject" cal:RegionManager.RegionName="MenuProject" />
+                <MenuItem Header="_Edit" Name="MenuEdit" cal:RegionManager.RegionName="MenuEdit" />
+                <MenuItem Header="_Import" Name="MenuImport" cal:RegionManager.RegionName="MenuImport" />
+            </Menu>
+        </DockPanel>
+
+        <ContentControl Name="Workspace" cal:RegionManager.RegionName="Workspace" DockPanel.Dock="Left" />
+    </DockPanel>
+</Window>

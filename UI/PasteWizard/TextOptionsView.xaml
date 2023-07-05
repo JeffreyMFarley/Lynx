@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Lynx.UI.PasteWizard.TextOptionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel>
+        <GroupBox Header="Input Structure">
+            <CheckBox IsChecked="{Binding DataHasHeaders}">Data Has Headers</CheckBox>
+        </GroupBox>
+        <GroupBox Header="Input Delimiters">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <CheckBox Grid.Row="0" IsChecked="{Binding DelimiterTab}">Tab</CheckBox>
+                <CheckBox Grid.Row="1" IsChecked="{Binding DelimiterSemicolon}">Semicolon</CheckBox>
+                <CheckBox Grid.Row="2" IsChecked="{Binding DelimiterComma}">Comma</CheckBox>
+                <CheckBox Grid.Row="3" IsChecked="{Binding DelimiterSpace}">Space</CheckBox>
+                <CheckBox Grid.Row="4" IsChecked="{Binding DelimiterOther}">Other:</CheckBox>
+                <TextBox Grid.Row="4" 
+                                     Grid.Column="1" 
+                                     MinWidth="20" 
+                                     Text="{Binding OtherDelimiters}"
+                                     />
+            </Grid>
+        </GroupBox>
+    </StackPanel>
+</UserControl>

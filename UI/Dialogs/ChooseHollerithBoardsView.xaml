@@ -1,0 +1,59 @@
+﻿<Window x:Class="Lynx.UI.Dialogs.ChooseHollerithBoardsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Lynx.UI.Dialogs"
+        Title="{Binding Title}"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="CanResizeWithGrip" 
+        WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+        <BooleanToVisibilityConverter x:Key="BooleanConverter" />
+        <DataTemplate DataType="{x:Type local:HollerithUsage}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" SharedSizeGroup="Check" />
+                    <ColumnDefinition Width="auto" SharedSizeGroup="Name" />
+                    <ColumnDefinition Width="*" SharedSizeGroup="Boards" />
+                    <ColumnDefinition Width="*" SharedSizeGroup="Options" />
+                </Grid.ColumnDefinitions>
+                <CheckBox IsChecked="{Binding Use}"
+                          VerticalAlignment="Center"
+                           Margin="2,0"/>
+                <TextBlock Grid.Column="1"
+                           Text="{Binding FieldName}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="2,5"/>
+                <ComboBox Grid.Column="2"
+                          ItemsSource="{Binding AvailablePanels}"
+                          SelectedItem="{Binding SelectedPanel}"
+                          Visibility="{Binding Use, Converter={StaticResource BooleanConverter}}"
+                          VerticalAlignment="Center"
+                          MinWidth="150"
+                          Margin="2,5"/>
+                <ComboBox Grid.Column="3"
+                          ItemsSource="{Binding AvailableFillOptions}"
+                          SelectedItem="{Binding SelectedFillOption}"
+                          Visibility="{Binding Use, Converter={StaticResource BooleanConverter}}"
+                          VerticalAlignment="Center"
+                          MinWidth="150"
+                          Margin="2,5"/>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto"
+                  Grid.IsSharedSizeScope="True">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Bottom" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                <Button IsDefault="True" Command="{Binding OkCommand}" CommandParameter="{Binding View}">OK</Button>
+                <Button IsCancel="True" Command="{Binding CancelCommand}" CommandParameter="{Binding View}">Cancel</Button>
+            </StackPanel>
+            <ListBox ItemsSource="{Binding Fields}" />
+        </DockPanel>
+    </ScrollViewer>
+</Window>

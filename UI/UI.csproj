@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{485B74F5-AF6D-4F6D-980B-85393F21D6C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lynx.UI</RootNamespace>
+    <AssemblyName>Lynx.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Composition.Initialization.Desktop">
+      <HintPath>..\Composition.Initialization.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Chart.v10.3, Version=10.3.20103.1003, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\InfragisticsWPF4.Chart.v10.3.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.DataPresenter.v10.3, Version=10.3.20103.1003, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\InfragisticsWPF4.DataPresenter.v10.3.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Editors.v10.3, Version=10.3.20103.1003, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\InfragisticsWPF4.Editors.v10.3.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.v10.3, Version=10.3.20103.1003, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\InfragisticsWPF4.v10.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite">
+      <HintPath>..\Microsoft.Practices.Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite.MefExtensions">
+      <HintPath>..\Microsoft.Practices.Composite.MefExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite.Presentation">
+      <HintPath>..\Microsoft.Practices.Composite.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QuickGraph">
+      <HintPath>..\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Graphviz">
+      <HintPath>..\QuickGraph.Graphviz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\CopyAsText.cs" />
+    <Compile Include="Actions\HollerithSort.cs" />
+    <Compile Include="Actions\PasteNewEntity.cs" />
+    <Compile Include="Dialogs\ChooseHollerithBoardsView.xaml.cs">
+      <DependentUpon>ChooseHollerithBoardsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ChooseHollerithBoardsViewModel.cs" />
+    <Compile Include="Dialogs\HollerithUsage.cs" />
+    <Compile Include="Hollerith\Bin.cs" />
+    <Compile Include="Hollerith\Board.cs" />
+    <Compile Include="Hollerith\Card.cs" />
+    <Compile Include="Hollerith\CellViewModel.cs" />
+    <Compile Include="Hollerith\EntityCard.xaml.cs">
+      <DependentUpon>EntityCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hollerith\IDataColumnBin.cs" />
+    <Compile Include="Hollerith\LinkCard.xaml.cs">
+      <DependentUpon>LinkCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PasteWizard\DataType.cs" />
+    <Compile Include="PasteWizard\ETL\FormattedClipboardText.cs" />
+    <Compile Include="PasteWizard\ETL\Copy.cs" />
+    <Compile Include="PasteWizard\ETL\GenerateGuid.cs" />
+    <Compile Include="PasteWizard\ETL\IEntitySetBuilder.cs" />
+    <Compile Include="PasteWizard\ETL\IExtractSource.cs" />
+    <Compile Include="PasteWizard\ETL\ITransform.cs" />
+    <Compile Include="PasteWizard\ETL\NewEmpty.cs" />
+    <Compile Include="PasteWizard\ETL\ProcessNewEntity.cs" />
+    <Compile Include="PasteWizard\ETL\TagsToFlags.cs" />
+    <Compile Include="PasteWizard\ETL\TransformBase.cs" />
+    <Compile Include="PasteWizard\Extensions.cs" />
+    <Compile Include="PasteWizard\ITransformViewModelHost.cs" />
+    <Compile Include="PasteWizard\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PasteWizard\MapNewEntityView.xaml.cs">
+      <DependentUpon>MapNewEntityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PasteWizard\NewDestinationView.xaml.cs">
+      <DependentUpon>NewDestinationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PasteWizard\PasteNewEntityViewModel.cs" />
+    <Compile Include="PasteWizard\TextOptionsView.xaml.cs">
+      <DependentUpon>TextOptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PasteWizard\TransformView.xaml.cs">
+      <DependentUpon>TransformView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PasteWizard\TransformViewModel.cs" />
+    <Compile Include="SubsetGenerators\FilterAsNewLinkSet.cs" />
+    <Compile Include="Actions\GenerateSubset.cs" />
+    <Compile Include="Actions\NewColumn.cs" />
+    <Compile Include="Actions\NewDomain.cs" />
+    <Compile Include="Actions\NewEntitySet.cs" />
+    <Compile Include="Actions\NewLinkSet.cs" />
+    <Compile Include="Actions\OpenDomain.cs" />
+    <Compile Include="Actions\SaveDomain.cs" />
+    <Compile Include="Dialogs\GenerateSubsetOptionsView.xaml.cs">
+      <DependentUpon>GenerateSubsetOptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\GenerateSubsetOptionsViewModel.cs" />
+    <Compile Include="Dialogs\GetNameView.xaml.cs">
+      <DependentUpon>GetNameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\GetNameViewModel.cs" />
+    <Compile Include="Dialogs\NewColumnViewModel.cs" />
+    <Compile Include="Dialogs\NewLinkSetView.xaml.cs">
+      <DependentUpon>NewLinkSetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewLinkSetViewModel.cs" />
+    <Compile Include="Dialogs\SelectTypeView.xaml.cs">
+      <DependentUpon>SelectTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubsetGenerators\FromForest.cs" />
+    <Compile Include="SubsetGenerators\MultipleVertex.cs" />
+    <Compile Include="SubsetGenerators\MultipleVertexOptionsView.xaml.cs">
+      <DependentUpon>MultipleVertexOptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubsetGenerators\PredecessorsSubgraph.cs" />
+    <Compile Include="SubsetGenerators\PredecessorsSubgraphOptions.xaml.cs">
+      <DependentUpon>PredecessorsSubgraphOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubsetGenerators\SetMathematics.cs" />
+    <Compile Include="SubsetGenerators\SetMathematicsOptionsView.xaml.cs">
+      <DependentUpon>SetMathematicsOptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubsetGenerators\SingleVertex.cs" />
+    <Compile Include="SubsetGenerators\SingleVertexOptionsView.xaml.cs">
+      <DependentUpon>SingleVertexOptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\BaseSetViewModel.cs" />
+    <Compile Include="ViewModels\DomainViewModel.cs" />
+    <Compile Include="ViewModels\EditMenuViewModel.cs" />
+    <Compile Include="ViewModels\EntitySetViewModel.cs" />
+    <Compile Include="ViewModels\LinkSetViewModel.cs" />
+    <Compile Include="Dialogs\ProgressViewModel.cs" />
+    <Compile Include="ViewModels\ProjectMenuViewModel.cs" />
+    <Compile Include="ViewModels\QuickGraphViewModel.cs" />
+    <Compile Include="ViewModels\VisualizationViewModel.cs" />
+    <Compile Include="Views\EditMenuView.xaml.cs">
+      <DependentUpon>EditMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GenericGridView.xaml.cs">
+      <DependentUpon>GenericGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LinkSetView.xaml.cs">
+      <DependentUpon>LinkSetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ProgressView.xaml.cs">
+      <DependentUpon>ProgressView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectMenuView.xaml.cs">
+      <DependentUpon>ProjectMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SvgView.xaml.cs">
+      <DependentUpon>SvgView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubsetGenerators\TableNameView.xaml.cs">
+      <DependentUpon>TableNameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VisualizationView.xaml.cs">
+      <DependentUpon>VisualizationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkspaceView.xaml.cs">
+      <DependentUpon>WorkspaceView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\lib\Esoteric\Common\Esoteric.Common.csproj">
+      <Project>{FE312EEF-1669-44E0-A413-E56736B05E65}</Project>
+      <Name>Esoteric.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\Esoteric\Hollerith\Esoteric.Hollerith.csproj">
+      <Project>{f059bd9f-151a-429a-bd16-34477e0fffd6}</Project>
+      <Name>Esoteric.Hollerith</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\Esoteric\UI\Desktop\Presentation\Esoteric.UI.Desktop.Presentation.csproj">
+      <Project>{7722fdde-511b-4a64-b761-4cdb1c44a6d2}</Project>
+      <Name>Esoteric.UI.Desktop.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{19678AD7-6861-4C20-A92F-80957CD5BA9D}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{B40B2865-2169-4990-8D24-3AB640EACA22}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="AGLExtensions\UI.AGLExtensions.csproj">
+      <Project>{464F65A4-5AA2-4AFD-A2DA-BD6FA7E2B2BE}</Project>
+      <Name>UI.AGLExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Dialogs\ChooseHollerithBoardsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\GenerateSubsetOptionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\GetNameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\NewLinkSetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\SelectTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Hollerith\EntityCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Hollerith\LinkCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PasteWizard\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PasteWizard\MapNewEntityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PasteWizard\NewDestinationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PasteWizard\TextOptionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PasteWizard\TransformView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubsetGenerators\MultipleVertexOptionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubsetGenerators\PredecessorsSubgraphOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubsetGenerators\SetMathematicsOptionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubsetGenerators\SingleVertexOptionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GenericGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LinkSetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\ProgressView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProjectMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SvgView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubsetGenerators\TableNameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VisualizationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WorkspaceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

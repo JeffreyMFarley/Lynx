@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Lynx.UI.Views.GenericGridView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:xam="http://infragistics.com/DataPresenter"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="320" d:DesignWidth="480">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+            <Button Command="{Binding Copy}"
+                    CommandParameter="{Binding ElementName=TheGrid}"
+                    Content="Copy" />
+            <Button Command="{Binding NewColumn}"
+                    CommandParameter="{Binding Table}"
+                    Content="New Column..."/>
+            <Button Command="{Binding HollerithSort}"
+                    CommandParameter="{Binding ElementName=TheGrid}"
+                    Content="Sorting Board..."/>
+        </StackPanel>
+        <xam:XamDataGrid Name="TheGrid" 
+                         DataSource="{Binding Table}"
+                         FieldLayoutInitialized="XamDataGrid_FieldLayoutInitialized">
+            <xam:XamDataGrid.FieldLayoutSettings>
+                <xam:FieldLayoutSettings AllowAddNew="True" 
+                                            AllowDelete="True" 
+                                            AllowClipboardOperations="All"
+                                            HeaderPrefixAreaDisplayMode="FieldChooserButton"
+                                         />
+            </xam:XamDataGrid.FieldLayoutSettings>
+            <xam:XamDataGrid.FieldSettings>
+                <xam:FieldSettings AllowHiding="ViaFieldChooserOnly" 
+                                    AllowRecordFiltering="True" 
+                                    ExpandableFieldRecordExpansionMode="ShowExpansionIndicatorIfSiblingsExist" 
+                                    ExpandableFieldRecordHeaderDisplayMode="AlwaysDisplayHeader" 
+                                    FilterOperatorDefaultValue="Contains"
+                                    Width="auto" />
+            </xam:XamDataGrid.FieldSettings>
+        </xam:XamDataGrid>
+    </DockPanel>
+</UserControl>

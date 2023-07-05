@@ -1,0 +1,5 @@
+﻿<Menu x:Class="Lynx.CSharpExchange.UI.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <MenuItem Header="Import C# Assemblies..." Command="{Binding Import}" />
+</Menu>
